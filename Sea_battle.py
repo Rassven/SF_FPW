@@ -79,7 +79,7 @@ class Board:
                     break
                 if rep_cou>10000:
                     continue
-            if ship_counter >= len(ship_rang)-2:
+            if ship_counter >= len(ship_rang)-1:
                 break
         return self.field, ship_list, ship_par_list
 
@@ -188,10 +188,6 @@ class Game:
             aifield, ai_slist, ai_ship_plist = AiBoard.new_board(self)
             self.show(myfield, aifield)
             t_point = [0, 0]
-            #MyBoard.shot(self, myfield, t_point)
-            #AiBoard.shot(self, aifield, t_point)
-            #print(my_lives)
-            #break
             while True:
                 if pl_num == 0:
                     ship_in = 2
@@ -229,7 +225,7 @@ class Game:
             return
 
     def start(self):
-        #self.greet()
+        self.greet()
         self.loop()
 
 MyGame=Game()
